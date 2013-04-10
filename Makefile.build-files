@@ -13,6 +13,8 @@ BUILD_FILES += cmakefiles.cmake
 BUILD_FILES += configure.new*	
 BUILD_FILES += distclean.cmake
 BUILD_FILES += distclean.sh
+BUILD_FILES += build.log
+
 
 BUILD_DIRS  = 
 BUILD_DIRS += CMakeFiles		   
