@@ -1,0 +1,6 @@
+Things to change upstream for a build out-of-tree:
+
+  include/conf/MAJOR
+  include/conf/MINOR
+  include/conf/PATCH
+
