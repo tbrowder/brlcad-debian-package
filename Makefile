@@ -43,6 +43,7 @@ check:
 build-clean:
 	@echo "Removing all but the 'debian' dir in directory '$(BLDDIR)'..."
 	( cd $(BLDDIR); rm $(BUILD_FILES); rm -rf $(BUILD_DIRS) )
+	@echo "See 'debian' dir in directory '$(BLDDIR)'..."
 
 config: build-clean
 	@echo "Copying some extra files to directory '$(BLDDIR)'..."
