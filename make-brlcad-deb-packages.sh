@@ -173,14 +173,15 @@ fi
 # create "version" file
 echo $BVERSION >debian/version
 
-# update debian/changelog if needed
-if test -s $CFILE && test `sed -n '1p' $CFILE | grep "brlcad ($BVERSION-$RELEASE" | wc -l` -eq 0 ; then
-    L1="brlcad ($BVERSION-$RELEASE) unstable; urgency=low\n\n"
-    L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"sh\/make_deb.sh\" SCRIPT ****\n\n"
-    L3=" -- Jordi Sayol <g.sayol@yahoo.es>  $CDATE\n\n/"
-    sed -i "1s/^/$L1$L2$L3" $CFILE
-    echo "\"$CFILE\" has been modified!"
-fi
+# TB: not  yet
+# # update debian/changelog if needed
+# if test -s $CFILE && test `sed -n '1p' $CFILE | grep "brlcad ($BVERSION-$RELEASE" | wc -l` -eq 0 ; then
+#     L1="brlcad ($BVERSION-$RELEASE) unstable; urgency=low\n\n"
+#     L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"sh\/make_deb.sh\" SCRIPT ****\n\n"
+#     L3=" -- Jordi Sayol <g.sayol@yahoo.es>  $CDATE\n\n/"
+#     sed -i "1s/^/$L1$L2$L3" $CFILE
+#     echo "\"$CFILE\" has been modified!"
+# fi
 
 # create deb or source packages
 case "$1" in
