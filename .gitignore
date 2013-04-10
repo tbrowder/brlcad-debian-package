@@ -2,3 +2,5 @@
 /debian-brlcad-cmake/
 /brlcad-7.22.0.tar.bz2
 /brlcad-value-autotools-config.sh
+*~
+#*
