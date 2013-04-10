@@ -4,3 +4,6 @@
 /brlcad-value-autotools-config.sh
 *~
 #*
+/make-value-brlcad-deb-cmake.sh
+/make_deb.sh
+/Makefile.orig
