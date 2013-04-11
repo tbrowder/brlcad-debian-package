@@ -1,5 +1,14 @@
 Things to change upstream for a build out-of-tree:
 
+Files required for the deb build:
+
+  AUTHORS
+  BUGS
+  ChangeLog
+  HACKING
+  NEWS
+  README
+  TODO
   include/conf/MAJOR
   include/conf/MINOR
   include/conf/PATCH
