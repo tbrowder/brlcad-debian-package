@@ -13,3 +13,20 @@ Files required for the deb build:
   include/conf/MINOR
   include/conf/PATCH
 
+Warnings during build:
+
+dpkg-shlibdeps: warning: Can't extract name and version from library name `libclipper.so'
+dpkg-shlibdeps: warning: Can't extract name and version from library name `libpoints.so'
+dpkg-shlibdeps: warning: Can't extract name and version from library name `libregex.so'
+dpkg-shlibdeps: warning: Can't extract name and version from library name `libtermlib.so'
+dpkg-shlibdeps: warning: symbol _ZN7InstMgr10FindFileIdEi used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libstepcore.so.2.0.0 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol atan used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol atan2 used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol cos used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol floor used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol fmod used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol hypot used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol log10 used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol pow used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol sin used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+dpkg-shlibdeps: warning: symbol sqrt used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
