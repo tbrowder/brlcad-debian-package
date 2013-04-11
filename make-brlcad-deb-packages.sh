@@ -81,7 +81,7 @@ fi
 
 # test if in build directory
 if test ! -f debian/control ; then
-    ferror "\"make_deb.sh\" should be run from project build directory." "Exiting..."
+    ferror "'make-brlcad-deb-packages.sh' should be run from project build directory." "Exiting..."
 fi
 
 # test if in debian-like system
@@ -193,7 +193,8 @@ case "$1" in
 esac
 
 # #
-rm -Rf debian
+# TB: DON'T remove
+#rm -Rf debian
 
 # Local Variables:
 # mode: sh
