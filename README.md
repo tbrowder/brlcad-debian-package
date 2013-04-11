@@ -40,8 +40,8 @@ Packages
 
 The following binary packages are planned:
 
-* libxml2
-* libxml2-dbg
-* libxml2-dev
-* libxml2-doc
-* libxml2-utils
+* brlcad
+* brlcad-dbg
+* brlcad-dev
+* brlcad-doc
+* brlcad-utils
