@@ -40,8 +40,8 @@ Packages
 
 The following binary packages are planned:
 
-* brlcad
-* brlcad-dbg
-* brlcad-dev
-* brlcad-doc
-* brlcad-utils
+* libbrlcad
+* libbrlcad-dbg
+* libbrlcad-dev
+* libbrlcad-doc
+* libbrlcad-utils
