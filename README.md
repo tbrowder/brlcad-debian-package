@@ -25,7 +25,7 @@ BRL-CAD HEAD.  Necessary changes to satisfy the latest Debian policy
 and Debian Maintainers are fed back upstream.
 
 Building
---------
+========
 
 * Select and copy an original upstream tar ball of the desired release into this directory.
 
@@ -34,3 +34,14 @@ Building
 * Edit 'Makefile' to define the correct  release version.
 
 Execute 'make' in this directory to see further instructions.
+
+Packages
+========
+
+The following binary packages are planned:
+
+* libxml2
+* libxml2-dbg
+* libxml2-dev
+* libxml2-doc
+* libxml2-utils
