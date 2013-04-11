@@ -27,7 +27,7 @@ and Debian Maintainers are fed back upstream.
 Building
 --------
 
-* Select and copy an original upstream tar ball oof the desired release into this directory.
+* Select and copy an original upstream tar ball of the desired release into this directory.
 
 * Unpack the tar ball and leave it in place.
 
