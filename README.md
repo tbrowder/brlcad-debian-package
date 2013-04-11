@@ -24,4 +24,13 @@ generally stays synchronized with its sister directory in the upstream
 BRL-CAD HEAD.  Necessary changes to satisfy the latest Debian policy
 and Debian Maintainers are fed back upstream.
 
+Building
+--------
 
+* Select and copy an original upstream tar ball oof the desired release into this directory.
+
+* Unpack the tar ball and leave it in place.
+
+* Edit 'Makefile' to defined the correct  release version.
+
+Execute 'make' in this directory to see further instructions.
