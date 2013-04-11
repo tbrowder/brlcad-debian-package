@@ -23,10 +23,10 @@ include Makefile.build-files
 all:
 	@echo "Set for BRL-CAD version '$(BVERSION)'."
 	@echo " "
-	@echo "Enter 'make build-clean' to remove build files in"
+	@echo "Enter 'make clean' to remove build files in"
 	@echo "  '$(BLDDIR)'."
 	@echo " "
-	@echo "Enter 'make config' to remove build files in"
+	@echo "Enter 'make conf' to remove build files in"
 	@echo "  '$(BLDDIR)' and reconfigure the directory."
 	@echo " "
 	@echo "Enter 'make check' to check for pre-requisites."
@@ -41,16 +41,12 @@ check:
 	@echo "Checking for pre-requisites..."
 	( cd $(BLDDIR); ../$(DEB_SCRIPT) -b -t )
 
-clean: build-clean
-
-build-clean:
+clean:
 	@echo "Removing all but the 'debian' dir in directory '$(BLDDIR)'..."
 	( cd $(BLDDIR); rm $(BUILD_FILES); rm -rf $(BUILD_DIRS) )
 	@echo "See 'debian' dir in directory '$(BLDDIR)'..."
 
-conf: config
-
-config: build-clean
+conf: clean
 	@echo "Copying some extra files to directory '$(BLDDIR)'..."
 	mkdir -p $(BLDDIR)/include/conf
 	cp $(SRCDIR)/include/conf/MAJOR $(BLDDIR)/include/conf
