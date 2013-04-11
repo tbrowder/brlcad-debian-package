@@ -31,6 +31,6 @@ Building
 
 * Unpack the tar ball and leave it in place.
 
-* Edit 'Makefile' to defined the correct  release version.
+* Edit 'Makefile' to define the correct  release version.
 
 Execute 'make' in this directory to see further instructions.
