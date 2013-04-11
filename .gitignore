@@ -8,3 +8,4 @@
 /make_deb.sh
 /Makefile.orig
 /t
+/*.deb

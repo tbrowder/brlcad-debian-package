@@ -34,3 +34,5 @@
 /README
 /TODO
 /toplevel_DOCFILES.sentinel
+/build-stamp
+/install_manifest.txt
