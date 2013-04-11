@@ -8,6 +8,8 @@ SRCDIR  = brlcad-$(BVERSION)
 PKG     = brlcad-$(BVERSION).tar.bz2
 BLDDIR  = brlcad-build
 
+TOPDIR := $(shell pwd)
+
 DEB_SCRIPT  = make-brlcad-deb-packages.sh
 
 BLD_ARGS  = rel
@@ -35,11 +37,11 @@ all:
 
 deb:
 	@echo "Building Debian packages..."
-	( cd $(BLDDIR); ../$(DEB_SCRIPT) -b | tee build.log )
+	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -b | tee build.log )
 
 check:
 	@echo "Checking for pre-requisites..."
-	( cd $(BLDDIR); ../$(DEB_SCRIPT) -b -t )
+	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -b -t )
 
 clean:
 	@echo "Removing all but the 'debian' dir in directory '$(BLDDIR)'..."
@@ -48,9 +50,8 @@ clean:
 
 conf: clean
 	@echo "Copying some extra files to directory '$(BLDDIR)'..."
+	(cd $(SRCDIR) ; cp $(FILES_TOP) $(TOPDIR)/$(BLDDIR) )
 	mkdir -p $(BLDDIR)/include/conf
-	cp $(SRCDIR)/include/conf/MAJOR $(BLDDIR)/include/conf
-	cp $(SRCDIR)/include/conf/MINOR $(BLDDIR)/include/conf
-	cp $(SRCDIR)/include/conf/PATCH $(BLDDIR)/include/conf
+	(cd $(SRCDIR)/include/conf ; cp $(FILES_CONF) $(TOPDIR)/$(BLDDIR)/include/conf )
 	@echo "Reconfiguring directory '$(BLDDIR)'..."
-	( unset BRLCAD_ROOT ; cd $(BLDDIR) ; cmake ../$(SRCDIR) $(RELEASE_OPTIONS) )
+	( unset BRLCAD_ROOT ; cd $(BLDDIR) ; cmake $(TOPDIR)/$(SRCDIR) $(RELEASE_OPTIONS) )

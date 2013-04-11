@@ -1,19 +1,47 @@
+# list of files needed not yet provided by the cmake conf:
+FILES_TOP  =
+FILES_TOP += AUTHORS
+FILES_TOP += BUGS
+FILES_TOP += ChangeLog
+FILES_TOP += HACKING
+FILES_TOP += NEWS
+FILES_TOP += README
+FILES_TOP += TODO
+
+FILES_CONF  =
+FILES_CONF += MAJOR
+FILES_CONF += MINOR
+FILES_CONF += PATCH
+
+# list of files and directories copied into 'brlcad-buid' that can be
+# safely removed
+
 BUILD_FILES  =
+BUILD_FILES += AUTHORS
 BUILD_FILES += BRLCAD_CPackOptions.cmake  
+BUILD_FILES += BUGS
 BUILD_FILES += CMakeCache.txt		   
 BUILD_FILES += CPackConfig.cmake	   
 BUILD_FILES += CPackSourceConfig.cmake    
 BUILD_FILES += CTestTestfile.cmake	   
+BUILD_FILES += ChangeLog  
+BUILD_FILES += HACKING  
 BUILD_FILES += INSTALL.new		   
 BUILD_FILES += Makefile		
+BUILD_FILES += NEWS     
 BUILD_FILES += OPTIONS		
+BUILD_FILES += README  
+BUILD_FILES += TODO    
+BUILD_FILES += build-stamp  
+BUILD_FILES += build.log
 BUILD_FILES += cmake_install.cmake	
 BUILD_FILES += cmakedirs.cmake	
 BUILD_FILES += cmakefiles.cmake	
 BUILD_FILES += configure.new*	
 BUILD_FILES += distclean.cmake
 BUILD_FILES += distclean.sh
-BUILD_FILES += build.log
+BUILD_FILES += install_manifest.txt
+BUILD_FILES += toplevel_DOCFILES.sentinel
 
 
 BUILD_DIRS  = 
