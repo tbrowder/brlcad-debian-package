@@ -17,6 +17,7 @@ FILES_CONF += PATCH
 # safely removed
 
 BUILD_FILES  =
+BUILD_FILES += *~
 BUILD_FILES += AUTHORS
 BUILD_FILES += BRLCAD_CPackOptions.cmake  
 BUILD_FILES += BUGS
@@ -43,7 +44,6 @@ BUILD_FILES += distclean.sh
 BUILD_FILES += install_manifest.txt
 BUILD_FILES += toplevel_DOCFILES.sentinel
 
-
 BUILD_DIRS  = 
 BUILD_DIRS += CMakeFiles		   
 BUILD_DIRS += CMakeTmp		   
@@ -55,6 +55,7 @@ BUILD_DIRS += etc
 BUILD_DIRS += include	 
 BUILD_DIRS += lib
 BUILD_DIRS += misc
+BUILD_DIRS += pdf
 BUILD_DIRS += pix
 BUILD_DIRS += regress
 BUILD_DIRS += sh
