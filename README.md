@@ -40,7 +40,7 @@ Building test packages
 ======================
 
 Testing will track the current BRL-CAD HEAD during testing, so soft
-link my local HEAD directory to this directory as './brlcad-N.NN.N'
+link the local HEAD directory to this directory as './brlcad-N.NN.N'
 where 'N.NN.N' is named after the current unstable or HEAD pseudo
 release tag.
 
