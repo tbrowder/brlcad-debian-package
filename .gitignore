@@ -9,3 +9,7 @@
 /Makefile.orig
 /t
 /*.deb
+/brlcad-7.23.1.tar.bz2
+/build.log
+/deb-warnings-rev-55130.txt
+/brlcad-7.23.1/
