@@ -1,7 +1,8 @@
 # need to completely clean up after a Debian build
 
 # important: set BRL-CAD vesion here
-BVERSION = 7.22.0
+#BVERSION = 7.22.0
+BVERSION = 7.23.1
 
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
