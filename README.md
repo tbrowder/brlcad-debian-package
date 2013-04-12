@@ -24,14 +24,31 @@ generally stays synchronized with its sister directory in the upstream
 BRL-CAD HEAD.  Necessary changes to satisfy the latest Debian policy
 and Debian Maintainers are fed back upstream.
 
-Building
-========
+Building release packages
+=========================
 
-* Select and copy an original upstream tar ball of the desired release into this directory.
+* Select and copy an original upstream tar ball of the desired release
+  into this directory.
 
 * Unpack the tar ball and leave it in place.
 
-* Edit 'Makefile' to define the correct  release version.
+* Edit 'Makefile' to define the correct release version.
+
+Execute 'make' in this directory to see further instructions.
+
+Building test packages
+======================
+
+The intent is to track the current BRL-CAD HEAD during testing, so I
+soft link my local HEAD directory to this directory as
+'./brlcad-N.NN.N' where 'N.NN.N' is named after the current unstable
+or HEAD pseudo release tag.
+
+* Edit 'Makefile' to define the correct version number.
+
+* Note the 'update-upstream-head.sh' script is driven by the Makefile
+  to ensure the HEAD is current (such will disappear and be included
+  in the Makefile later).
 
 Execute 'make' in this directory to see further instructions.
 
