@@ -39,16 +39,14 @@ Execute 'make' in this directory to see further instructions.
 Building test packages
 ======================
 
-The intent is to track the current BRL-CAD HEAD during testing, so I
-soft link my local HEAD directory to this directory as
-'./brlcad-N.NN.N' where 'N.NN.N' is named after the current unstable
-or HEAD pseudo release tag.
+Testing will track the current BRL-CAD HEAD during testing, so soft
+link my local HEAD directory to this directory as './brlcad-N.NN.N'
+where 'N.NN.N' is named after the current unstable or HEAD pseudo
+release tag.
 
-* Edit 'Makefile' to define the correct version number.
+* Edit 'Makefile' to define the correct pseudo version number.
 
-* Note the 'update-upstream-head.sh' script is driven by the Makefile
-  to ensure the HEAD is current (such will disappear and be included
-  in the Makefile later).
+* Edit 'Makefile' to define the VCS source directory as the HEAD variable.
 
 Execute 'make' in this directory to see further instructions.
 
