@@ -36,3 +36,6 @@
 /toplevel_DOCFILES.sentinel
 /build-stamp
 /install_manifest.txt
+/etc/
+/pdf/
+/CTestTestfile.cmake
