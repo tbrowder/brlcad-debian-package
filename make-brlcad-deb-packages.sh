@@ -1,5 +1,6 @@
 #!/bin/sh
 #                     M A K E _ D E B . S H
+#           (original and current BRL-CAD source name)
 # BRL-CAD
 #
 # Copyright (c) 2005-2013 United States Government as represented by
@@ -35,9 +36,29 @@
 #
 ###
 
+# This file name: make-brlcad-deb-packages.sh
+#
+# This file was copied from BRL-CAD sh/make_deb.sh in April 2013 to
+# start the out-of-tree semi-official BRL-CAD Debian package project.
+# The goal of this project is to become the official Debian BRL-CAD package source.
+#
+# The original package maintainer for this project is Tom Browder
+# <tom.browder@gmail.com> who introduced himself to the current Debian
+# BRL-CAD package maintainer, Giuseppe Iuculano
+# <giuseppe@iuculano.it>.  The current Debian project is inactive and
+# has not been tended since 2009.  Tom also presented himself to the
+# Debian maintainers group to whom the package belongs
+# (science-maintainers) and stated his intentions to co-maintain the
+# package and get a Debian Maintainer to sign his public key.
+#
+# The original file has been modified to (1) satisfy Debain packaging
+# policy, (2) work with a cmake configuration and build outside the
+# BRL-CAD source tree, and (3) respect the desires of the BRL-CAD
+# developers when they do not conflict with Debian policy.
+
 set -e
 
-# NOTE: This script is designed  to be run in a subdir of a Makefile
+# NOTE: This script is designed to be run in a subdir of a Makefile
 #       driving it.
 
 # file to be sourced
@@ -109,7 +130,10 @@ if test ! -e "../$SFIL" ; then
 fi
 
 # source it to get BVERSION and SRCDIR
-source $SFIL
+echo "In dir `pwd`..."
+echo "Sourcing '../$SFIL"
+# note /bin/sh does not recognize cmd 'source'
+. "../$SFIL"
 
 # check needed packages
 E=0
@@ -161,16 +185,7 @@ if [ $E -eq 1 ]; then
     ferror "Mandatory to install these packages first:" "$LLIST"
 fi
 
-if [ $TEST -eq 1 ]; then
-    echo "=========================================================="
-    echo "Testing complete"
-    echo "Ready to create a Debian package"
-    echo "=========================================================="
-    exit
-fi
-
 # set variables
-#BVERSION=`cat include/conf/MAJOR | sed 's/[^0-9]//g'`"."`cat include/conf/MINOR | sed 's/[^0-9]//g'`"."`cat include/conf/PATCH | sed 's/[^0-9]//g'`
 CDATE=`date -R`
 CFILE="debian/changelog"
 RELEASE="0"
@@ -191,6 +206,34 @@ fi
 # create "version" file
 echo $BVERSION >debian/version
 
+# update debian/changelog if needed
+L1="brlcad ($BVERSION-$RELEASE) unstable; urgency=low\n\n"
+L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"make-brlcad-deb-packages.sh\" SCRIPT ****\n\n"
+L3=" -- $PACKAGER  $CDATE\n\n/"
+
+if test -s $CFILE ; then
+  # file exists with size > 0
+  if  test `sed -n '1p' $CFILE | grep "brlcad ($BVERSION-$RELEASE" | wc -l` -eq 0 ; then
+    sed -i "1s/^/$L1$L2$L3" $CFILE
+    echo "\"$CFILE\" has been modified!"
+  else
+    echo "\"$CFILE\" has NOT been modified!"
+  fi
+else
+    # [re]create an empty file with one line so the expression will work
+    echo > $CFILE
+    sed -i "1s/^/$L1$L2$L3" $CFILE
+    echo "\"$CFILE\" has been modified!"
+fi
+
+if [ $TEST -eq 1 ]; then
+    echo "=========================================================="
+    echo "Testing complete"
+    echo "Ready to create a Debian package"
+    echo "=========================================================="
+    exit
+fi
+
 # create deb or source packages
 case "$1" in
 -b) fakeroot debian/rules clean
@@ -199,10 +242,6 @@ case "$1" in
 -s) fakeroot dpkg-buildpackage -S -us -uc
     ;;
 esac
-
-# #
-# TB: DON'T remove
-#rm -Rf debian
 
 # Local Variables:
 # mode: sh
