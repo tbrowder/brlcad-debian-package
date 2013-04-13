@@ -8,10 +8,12 @@ BVERSION = 7.23.1
 # if not needed
 HEAD=/usr/local/src2/brlcad-svn/brlcad/trunk
 
+
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
 PKG     = brlcad-$(BVERSION).tar.bz2
 BLDDIR  = brlcad-build
+SFIL    = brlcad-version.sh
 
 TOPDIR := $(shell pwd)
 
@@ -28,6 +30,9 @@ include Makefile.brlcad-options
 include Makefile.build-files
 
 all:
+        # write version file to used by the make deb script
+	@echo BVERSION=$(BVERSION)  >  $(SFIL)
+	@echo SRCDIR=$(SRCDIR)     >> $(SFIL)
 ifneq ($(strip $(HEAD)),)
 	@echo "Testing with updated HEAD"
 endif
