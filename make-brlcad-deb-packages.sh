@@ -62,7 +62,7 @@ set -e
 #       driving it.
 
 # file to be sourced
-SFIL=brlcad-version.sh
+SFIL=brlcad-info.sh
 
 ferror(){
     echo "=========================================================="
@@ -196,8 +196,6 @@ if test ! $NJOBS -gt 0 2>/dev/null ;then
 fi
 
 # if building sources, create *orig.tar.gz
-# TB: DON'T delete
-#rm -Rf debian
 if test "$1" = "-s" ;then
     echo "building brlcad_$BVERSION.orig.tar.gz..."
     tar -czf "../brlcad_$BVERSION.orig.tar.gz" "../$SRCDIR/*"
@@ -208,7 +206,7 @@ echo $BVERSION >debian/version
 
 # update debian/changelog if needed
 L1="brlcad ($BVERSION-$RELEASE) unstable; urgency=low\n\n"
-L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"make-brlcad-deb-packages.sh\" SCRIPT ****\n\n"
+L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"${DEB_SCRIPT}\" SCRIPT ****\n\n"
 L3=" -- $PACKAGER  $CDATE\n\n/"
 
 if test -s $CFILE ; then
