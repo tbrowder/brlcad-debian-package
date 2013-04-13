@@ -15,7 +15,7 @@ SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
 PKG     = brlcad-$(BVERSION).tar.bz2
 BLDDIR  = brlcad-build
-SFIL    = brlcad-version.sh
+SFIL    = brlcad-info.sh
 
 TOPDIR := $(shell pwd)
 
@@ -48,10 +48,11 @@ endif
 	@echo "Enter 'make deb' to build the deb packages."
 
 $(SFIL):
-        # write version file to used by the make deb script
+        # write info file to used by the make deb script
 	@echo BVERSION=$(BVERSION)       >  $(SFIL)
 	@echo SRCDIR=$(SRCDIR)           >> $(SFIL)
 	@echo "PACKAGER='$(PACKAGER)'"   >> $(SFIL)
+	@echo DEB_SCRIPT=$(DEB_SCRIPT)   >> $(SFIL)
 
 deb: $(SFIL)
 	@echo "Building Debian packages..."
