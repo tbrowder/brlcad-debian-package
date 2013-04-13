@@ -49,7 +49,7 @@ BUILD_DIRS += CMakeFiles
 BUILD_DIRS += CMakeTmp		   
 BUILD_DIRS += bench		
 BUILD_DIRS += bin			
-BUILD_DIRS += db		 
+BUILD_DIRS += db
 BUILD_DIRS += doc		 
 BUILD_DIRS += etc		 
 BUILD_DIRS += include	 
@@ -61,3 +61,7 @@ BUILD_DIRS += regress
 BUILD_DIRS += sh
 BUILD_DIRS += share
 BUILD_DIRS += src
+
+# some deb dir are auto-generated
+BUILD_DIRS += debian/tmp		 
+BUILD_DIRS += debian/brlcad		 
