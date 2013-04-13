@@ -8,6 +8,8 @@ BVERSION = 7.23.1
 # if not needed
 HEAD=/usr/local/src2/brlcad-svn/brlcad/trunk
 
+# define the packager (debian format)
+PACKAGER=Tom Browder <tom.browder@gmail.com>
 
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
@@ -29,10 +31,7 @@ include Makefile.brlcad-options
 # define dirs in the build directory that may be cleaned
 include Makefile.build-files
 
-all:
-        # write version file to used by the make deb script
-	@echo BVERSION=$(BVERSION)  >  $(SFIL)
-	@echo SRCDIR=$(SRCDIR)     >> $(SFIL)
+all: $(SFIL)
 ifneq ($(strip $(HEAD)),)
 	@echo "Testing with updated HEAD"
 endif
@@ -48,11 +47,17 @@ endif
 	@echo " "
 	@echo "Enter 'make deb' to build the deb packages."
 
-deb:
+$(SFIL):
+        # write version file to used by the make deb script
+	@echo BVERSION=$(BVERSION)       >  $(SFIL)
+	@echo SRCDIR=$(SRCDIR)           >> $(SFIL)
+	@echo "PACKAGER='$(PACKAGER)'"   >> $(SFIL)
+
+deb: $(SFIL)
 	@echo "Building Debian packages..."
 	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -b | tee build.log )
 
-check:
+check: $(SFIL)
 	@echo "Checking for pre-requisites..."
 	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -b -t )
 
@@ -72,10 +77,5 @@ else
 endif
 
 conf: clean update
-
-	@echo "Copying some extra files to directory '$(BLDDIR)'..."
-	(cd $(SRCDIR) ; cp $(FILES_TOP) $(TOPDIR)/$(BLDDIR) )
-	mkdir -p $(BLDDIR)/include/conf
-	(cd $(SRCDIR)/include/conf ; cp $(FILES_CONF) $(TOPDIR)/$(BLDDIR)/include/conf )
 	@echo "Reconfiguring directory '$(BLDDIR)'..."
 	( unset BRLCAD_ROOT ; cd $(BLDDIR) ; cmake $(TOPDIR)/$(SRCDIR) $(RELEASE_OPTIONS) )
