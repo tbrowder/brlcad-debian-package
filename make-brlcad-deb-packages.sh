@@ -37,6 +37,12 @@
 
 set -e
 
+# NOTE: This script is designed  to be run in a subdir of a Makefile
+#       driving it.
+
+# file to be sourced
+SFIL=brlcad-version.sh
+
 ferror(){
     echo "=========================================================="
     echo $1
@@ -50,7 +56,7 @@ if test -z $1 ;then
     echo "Script to create Debian binary and source packages."
     echo
     echo "Usage:"
-    echo "  sh/make_deb.sh -b | -s [-t]"
+    echo "  $0 -b | -s [-t]"
     echo
     echo "Options:"
     echo "  -b       build the Debian binary package (deb file)"
@@ -58,6 +64,14 @@ if test -z $1 ;then
     echo "  -t       as second argument: test for all prerequisites"
     echo
     echo "           * (use with a clean brlcad tree)"
+    echo
+    echo "You MUST provide a separate file to be sourced, '$SFIL',"
+    echo "  defining two variables:"
+    echo
+    echo "  BVERSION - the BRL-CAD version to use, e.g, '7.23.1'"
+    echo "             (without the quotes)"
+    echo "  SRCDIR   - the pristine BRL-CAD source directory"
+    echo
     exit 1
 fi
 
@@ -81,13 +95,21 @@ fi
 
 # test if in build directory
 if test ! -f debian/control ; then
-    ferror "'make-brlcad-deb-packages.sh' should be run from project build directory." "Exiting..."
+    ferror "'$0' should be run from project build directory." "Exiting..."
 fi
 
 # test if in debian-like system
 if test ! -e /etc/debian_version ; then
     ferror "Refusing to build on a non-debian system." "Exiting..."
 fi
+
+# test for version source file
+if test ! -e "../$SFIL" ; then
+    ferror "Unable to find file '$SFIL'." "Exiting..."
+fi
+
+# source it to get BVERSION and SRCDIR
+source $SFIL
 
 # check needed packages
 E=0
@@ -132,7 +154,7 @@ if test "$1" = "-b" ;then
     fcheck xsltproc x
     fcheck libglu1-mesa-dev
     fcheck libpango1.0-dev
-    #fcheck fop # allows pdf creation
+    fcheck fop # allows pdf creation
 fi
 
 if [ $E -eq 1 ]; then
@@ -148,7 +170,7 @@ if [ $TEST -eq 1 ]; then
 fi
 
 # set variables
-BVERSION=`cat include/conf/MAJOR | sed 's/[^0-9]//g'`"."`cat include/conf/MINOR | sed 's/[^0-9]//g'`"."`cat include/conf/PATCH | sed 's/[^0-9]//g'`
+#BVERSION=`cat include/conf/MAJOR | sed 's/[^0-9]//g'`"."`cat include/conf/MINOR | sed 's/[^0-9]//g'`"."`cat include/conf/PATCH | sed 's/[^0-9]//g'`
 CDATE=`date -R`
 CFILE="debian/changelog"
 RELEASE="0"
@@ -163,25 +185,11 @@ fi
 #rm -Rf debian
 if test "$1" = "-s" ;then
     echo "building brlcad_$BVERSION.orig.tar.gz..."
-    tar -czf "../brlcad_$BVERSION.orig.tar.gz" *
+    tar -czf "../brlcad_$BVERSION.orig.tar.gz" "../$SRCDIR/*"
 fi
-
-# copy debian folder on project root
-# TB: DON'T copy
-#cp -Rf misc/debian/ .
 
 # create "version" file
 echo $BVERSION >debian/version
-
-# TB: not  yet
-# # update debian/changelog if needed
-# if test -s $CFILE && test `sed -n '1p' $CFILE | grep "brlcad ($BVERSION-$RELEASE" | wc -l` -eq 0 ; then
-#     L1="brlcad ($BVERSION-$RELEASE) unstable; urgency=low\n\n"
-#     L2="  **** VERSION ENTRY AUTOMATICALLY ADDED BY \"sh\/make_deb.sh\" SCRIPT ****\n\n"
-#     L3=" -- Jordi Sayol <g.sayol@yahoo.es>  $CDATE\n\n/"
-#     sed -i "1s/^/$L1$L2$L3" $CFILE
-#     echo "\"$CFILE\" has been modified!"
-# fi
 
 # create deb or source packages
 case "$1" in
