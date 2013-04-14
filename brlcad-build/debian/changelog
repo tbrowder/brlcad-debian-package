@@ -1,8 +1,8 @@
 brlcad (7.23.1-0) unstable; urgency=low
 
-  Started new semi-official Debian brlcad package by piggybacking off BRL-CAD's debian
-	package (by Jordi Sayol) with necessary modifications for an out-of-tree build as
-	well as other changes.
+  * Started new semi-official Debian brlcad package by piggybacking
+	off BRL-CAD's debian package (by Jordi Sayol) with necessary
+	modifications for an out-of-tree build as well as other changes.
 
  -- Tom Browder <tom.browder@gmail.com>  Sat, 13 Apr 2013 17:01:58 -0500
 
