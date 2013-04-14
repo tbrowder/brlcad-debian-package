@@ -56,7 +56,7 @@ Packages
 The following binary packages are planned:
 
 * libbrlcad
-* libbrlcad-dbg
 * libbrlcad-dev
-* libbrlcad-doc
 * libbrlcad-utils
+* libbrlcad-doc
+* libbrlcad-dbg
