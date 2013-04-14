@@ -1,14 +1,14 @@
 Source: brlcad
 Section: graphics
 Priority: optional
-Maintainer: Jordi Sayol <g.sayol@yahoo.es>
+Maintainer: Tom Browder <tom.browder@gmail.com>
 Build-Depends: build-essential, fakeroot, debhelper (>= 7.0.0), make (>= 3.8.0), cmake, sed, bison, flex, libxi-dev, xsltproc, libglu1-mesa-dev, libpango1.0-dev
-Standards-Version: 3.9.1
+Standards-Version: 3.9.4
 Homepage: http://brlcad.org/
 Vcs-Svn: https://brlcad.svn.sourceforge.net/svnroot/brlcad/
 Vcs-Browser: http://brlcad.svn.sourceforge.net/viewvc/brlcad/
 
-Package: brlcad
+Package: libbrlcad
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, xterm
 Description: BRL-CAD open source solid modeling
@@ -21,3 +21,72 @@ Description: BRL-CAD open source solid modeling
  synthesis, a system performance analysis benchmark suite, an embedded
  scripting interface, and libraries for robust high-performance
  geometric representation and analysis.
+ .
+ This package provide the user libraries.
+
+Package: libbrlcad-dev
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, xterm
+Description: BRL-CAD open source solid modeling
+ BRL-CAD is a powerful cross-platform Open Source combinatorial
+ Constructive Solid Geometry (CSG) solid modeling system that
+ includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis,
+ network-distributed framebuffer support, image and signal-processing
+ tools, path-tracing and photon mapping support for realistic image
+ synthesis, a system performance analysis benchmark suite, an embedded
+ scripting interface, and libraries for robust high-performance
+ geometric representation and analysis.
+ .
+ Install this package if you wish to develop your own programs using
+ the BRL-CAD libraries.
+
+Package: libbrlcad-utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, xterm
+Description: BRL-CAD open source solid modeling
+ BRL-CAD is a powerful cross-platform Open Source combinatorial
+ Constructive Solid Geometry (CSG) solid modeling system that
+ includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis,
+ network-distributed framebuffer support, image and signal-processing
+ tools, path-tracing and photon mapping support for realistic image
+ synthesis, a system performance analysis benchmark suite, an embedded
+ scripting interface, and libraries for robust high-performance
+ geometric representation and analysis.
+ .
+ This package provides the utility programs that use the BRL-CAD libraries.
+
+Package: libbrlcad-doc
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, xterm
+Description: BRL-CAD open source solid modeling
+ BRL-CAD is a powerful cross-platform Open Source combinatorial
+ Constructive Solid Geometry (CSG) solid modeling system that
+ includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis,
+ network-distributed framebuffer support, image and signal-processing
+ tools, path-tracing and photon mapping support for realistic image
+ synthesis, a system performance analysis benchmark suite, an embedded
+ scripting interface, and libraries for robust high-performance
+ geometric representation and analysis.
+ .
+ This package provides the documentation for the BRL-CAD libraries and the
+ utilities.
+
+Package: libbrlcad-dbg
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, xterm
+Description: BRL-CAD open source solid modeling
+ BRL-CAD is a powerful cross-platform Open Source combinatorial
+ Constructive Solid Geometry (CSG) solid modeling system that
+ includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis,
+ network-distributed framebuffer support, image and signal-processing
+ tools, path-tracing and photon mapping support for realistic image
+ synthesis, a system performance analysis benchmark suite, an embedded
+ scripting interface, and libraries for robust high-performance
+ geometric representation and analysis.
+ .
+ This package provides the debugging symbols for the BRL-CAD libraries.
+
