@@ -4,3 +4,4 @@
 /libbrlcad-dev/
 /libbrlcad-doc/
 /libbrlcad-utils/
+/*.debhelper.log
