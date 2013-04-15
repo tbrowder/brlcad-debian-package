@@ -11,15 +11,15 @@ touched by the packaging process.  Any necessary source code changes
 are kept with the Debian 'quilt' utility whose database will also be
 kept under version control.  Such changes will also be fed upstream.
 
-The package is built out-of-tree in the 'brlcad-build' directory, and
-the Makefiles and a package building script
-(make-brlcad-deb-packages.sh) are used to drive the process from this
-top-level directory.  All files BUT the 'debian' directory can be
-deleted without harm since they are part of the 'cmake' configuration
-process.  Note that 'make-brlcad-deb-packages.sh' is a modified copy
-of the upstream 'sh/make_deb.sh' script.
+The package is built out-of-tree in the 'build' directory, and the
+Makefiles and a package building script (make-brlcad-deb-packages.sh)
+are used to drive the process from this top-level directory.  All
+files BUT the 'debian' directory can be deleted without harm since
+they are part of the 'cmake' configuration process.  Note that
+'make-brlcad-deb-packages.sh' is a modified copy of the upstream
+'sh/make_deb.sh' script.
 
-The 'brlcad-build/debian' directory is kept under version control and
+The 'build/debian' directory is kept under version control and
 generally stays synchronized with its sister directory in the upstream
 BRL-CAD HEAD.  Necessary changes to satisfy the latest Debian policy
 and Debian Maintainers are fed back upstream.
