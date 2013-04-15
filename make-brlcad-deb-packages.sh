@@ -87,11 +87,13 @@ if test -z $1 ;then
     echo "           * (use with a clean brlcad tree)"
     echo
     echo "You MUST provide a separate file to be sourced, '$SFIL',"
-    echo "  defining two variables:"
+    echo "  defining several variables:"
     echo
-    echo "  BVERSION - the BRL-CAD version to use, e.g, '7.23.1'"
-    echo "             (without the quotes)"
-    echo "  SRCDIR   - the pristine BRL-CAD source directory"
+    echo "  BVERSION   - the BRL-CAD version to use, e.g, '7.23.1'"
+    echo "               (without the quotes)"
+    echo "  SRCDIR     - the pristine BRL-CAD source directory"
+    echo "  PACKAGER   - maintainer name <e-mail>"
+    echo "  DEB_SCRIPT - name of this file"
     echo
     exit 1
 fi
@@ -237,7 +239,7 @@ case "$1" in
 -b) fakeroot debian/rules clean
     DEB_BUILD_OPTIONS=parallel=$NJOBS fakeroot debian/rules binary
     ;;
--s) fakeroot dpkg-buildpackage -S -us -uc
+-s) dpkg-buildpackage -S -us -uc -T source-build
     ;;
 esac
 
