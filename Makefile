@@ -6,14 +6,14 @@ BVERSION = 7.23.1
 
 # set HEAD to the the upstream source VCS source dir; comment it out
 # if not needed
-HEAD=/usr/local/src2/brlcad-svn/brlcad/trunk
+#HEAD=/usr/local/src2/brlcad-svn/brlcad/trunk
 
 # define the packager (debian format)
 PACKAGER=Tom Browder <tom.browder@gmail.com>
 
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
-PKG     = brlcad-$(BVERSION).tar.bz2
+ODIR    = brlcad_$(BVERSION)
 BLDDIR  = build
 SFIL    = brlcad-info.sh
 
@@ -61,7 +61,11 @@ deb: $(SFIL)
 
 src: $(SFIL)
 	@echo "Building Debian source package..."
-	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -s | tee build.log )
+#	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -s | tee build.log )
+#	( cd $(BLDDIR); dpkg-buildpackage -us -uc -S | tee build.log )
+	( rm -rf $(TOPDIR)/$(SRCDIR)/debian )
+	( cp -r $(TOPDIR)/$(BLDDIR)/debian $(TOPDIR)/$(SRCDIR) )
+	( cd $(BLDDIR); dpkg-source -b $(TOPDIR)/$(SRCDIR)  )
 
 check: $(SFIL)
 	@echo "Checking for pre-requisites..."
