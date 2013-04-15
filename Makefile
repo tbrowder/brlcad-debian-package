@@ -45,7 +45,8 @@ endif
 	@echo " "
 	@echo "Enter 'make check' to check for pre-requisites."
 	@echo " "
-	@echo "Enter 'make deb' to build the deb packages."
+	@echo "Enter 'make deb' to build the binary deb packages."
+	@echo "Enter 'make src' to build the source deb package."
 
 $(SFIL):
         # write info file to used by the make deb script
@@ -55,8 +56,12 @@ $(SFIL):
 	@echo DEB_SCRIPT=$(DEB_SCRIPT)   >> $(SFIL)
 
 deb: $(SFIL)
-	@echo "Building Debian packages..."
+	@echo "Building Debian binary packages..."
 	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -b | tee build.log )
+
+src: $(SFIL)
+	@echo "Building Debian source package..."
+	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -s | tee build.log )
 
 check: $(SFIL)
 	@echo "Checking for pre-requisites..."
