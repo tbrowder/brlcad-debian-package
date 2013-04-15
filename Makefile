@@ -14,7 +14,7 @@ PACKAGER=Tom Browder <tom.browder@gmail.com>
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
 PKG     = brlcad-$(BVERSION).tar.bz2
-BLDDIR  = brlcad-build
+BLDDIR  = build
 SFIL    = brlcad-info.sh
 
 TOPDIR := $(shell pwd)
