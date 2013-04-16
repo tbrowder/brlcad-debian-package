@@ -77,11 +77,10 @@ if test -z $1 ;then
     echo "Script to create Debian binary and source packages."
     echo
     echo "Usage:"
-    echo "  $0 -b | -s [-t]"
+    echo "  $0 -b [-t]"
     echo
     echo "Options:"
     echo "  -b       build the Debian binary package (deb file)"
-    echo "  -s *     build the Debian source packages"
     echo "  -t       as second argument: test for all prerequisites"
     echo
     echo "           * (use with a clean brlcad tree)"
@@ -104,7 +103,7 @@ if test $# -gt 2 ;then
 fi
 
 # unknown parameter
-if test "$1" != "-s" && test "$1" != "-b" ; then
+if test "$1" != "-b" ; then
     ferror "Unknown first argument '$1'." "Exiting..."
 fi
 
@@ -197,12 +196,6 @@ if test ! $NJOBS -gt 0 2>/dev/null ;then
     NJOBS=1
 fi
 
-# if building sources, create *orig.tar.gz
-if test "$1" = "-s" ;then
-    echo "building brlcad_$BVERSION.orig.tar.gz..."
-    tar -czf "../brlcad_$BVERSION.orig.tar.gz" "../$SRCDIR/*"
-fi
-
 # create "version" file
 echo $BVERSION >debian/version
 
@@ -234,14 +227,11 @@ if [ $TEST -eq 1 ]; then
     exit
 fi
 
-# create deb or source packages
+# create deb packages
 case "$1" in
 -b) fakeroot debian/rules clean
     DEB_BUILD_OPTIONS=parallel=$NJOBS fakeroot debian/rules binary
     ;;
-#-s) dpkg-buildpackage -S -us -uc -B../build
--s) mkdir ../build-tmp
-    debuild -S -us -uc -B../build-tmp
     ;;
 esac
 
