@@ -1,18 +1,5 @@
 Things to change upstream for a build out-of-tree:
 
-Files required for the deb build:
-
-  AUTHORS
-  BUGS
-  ChangeLog
-  HACKING
-  NEWS
-  README
-  TODO
-  include/conf/MAJOR
-  include/conf/MINOR
-  include/conf/PATCH
-
 Warnings during build:
 
 dpkg-shlibdeps: warning: Can't extract name and version from library name `libclipper.so'
@@ -30,3 +17,36 @@ dpkg-shlibdeps: warning: symbol log10 used by debian/brlcad/usr/brlcad/rel-7.22.
 dpkg-shlibdeps: warning: symbol pow used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
 dpkg-shlibdeps: warning: symbol sin used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
 dpkg-shlibdeps: warning: symbol sqrt used by debian/brlcad/usr/brlcad/rel-7.22.0/lib/libtk.so.8.5 found in none of the libraries.
+
+creating a skeleton package
+---------------------------
+
+while in this directory:
+
+get upstream tarball:
+
+  brlcad-7.23.1.tar.gz
+
+rename to:
+
+  $ mv brlcad-7.23.1.tar.gz   brlcad_7.23.1.orig.tar.gz
+  
+unpack it:
+
+  $ tar -xvzf brlcad_7.23.1.orig.tar.gz
+
+insert debian files:
+
+  # clean "build" directory
+  $ make clean
+  # debianize the source dir
+  $ cp -r build/debian brlcad-7.23.1
+
+try a source package
+
+  # normal
+  $ dpkg-source -b brlcad-7.23.1
+
+  # no patching, mainly for testing
+  $ dpkg-source -b --no-preparation brlcad-7.23.1
+
