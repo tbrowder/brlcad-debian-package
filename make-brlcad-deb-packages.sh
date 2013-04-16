@@ -239,7 +239,9 @@ case "$1" in
 -b) fakeroot debian/rules clean
     DEB_BUILD_OPTIONS=parallel=$NJOBS fakeroot debian/rules binary
     ;;
--s) dpkg-buildpackage -S -us -uc -T source-build
+#-s) dpkg-buildpackage -S -us -uc -B../build
+-s) mkdir ../build-tmp
+    debuild -S -us -uc -B../build-tmp
     ;;
 esac
 
