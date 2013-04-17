@@ -1,7 +1,0 @@
-/version
-/libbrlcad/
-/libbrlcad-dbg/
-/libbrlcad-dev/
-/libbrlcad-doc/
-/libbrlcad-utils/
-/*.debhelper.log
