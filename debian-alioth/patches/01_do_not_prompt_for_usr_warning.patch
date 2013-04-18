@@ -1,0 +1,63 @@
+Author: Giuseppe Iuculano <giuseppe@iuculano.it>
+Description: Do not prompt for /usr prefix warning
+--- a/configure
++++ b/configure
+@@ -2603,30 +2603,6 @@ echo "$as_me: Consider using a different
+ 	{ echo "$as_me:$LINENO: Pausing $emphasis seconds..." >&5
+ echo "$as_me: Pausing $emphasis seconds..." >&6;}
+ 	sleep $emphasis
+-	while true ; do
+-	    { echo "$as_me:$LINENO: " >&5
+-echo "$as_me: " >&6;}
+-	    { echo "$as_me:$LINENO: Would you like to continue with /usr as the install prefix? [yes/no]" >&5
+-echo "$as_me: Would you like to continue with /usr as the install prefix? [yes/no]" >&6;}
+-	    read bc_answer
+-	    case "x$bc_answer" in
+-		x*[yY][eE][sS]*)
+-		    bc_answer=yes
+-		    break ;;
+-		x*[nN][oO]*)
+-		    bc_answer=no
+-		    break ;;
+-		x*)
+-		    { echo "$as_me:$LINENO: Please answer 'yes' or 'no'" >&5
+-echo "$as_me: Please answer 'yes' or 'no'" >&6;}
+-		    ;;
+-	    esac
+-	done
+-	if test "x$bc_answer" = "xno" ; then
+-	    { { echo "$as_me:$LINENO: error: *** Aborting due to --prefix=/usr ***" >&5
+-echo "$as_me: error: *** Aborting due to --prefix=/usr ***" >&2;}
+-   { (exit 1); exit 1; }; }
+-	fi
+     fi
+ fi
+ 
+--- a/m4/prefix.m4
++++ b/m4/prefix.m4
+@@ -101,25 +101,6 @@ if test "x$BRLCAD_ROOT" = "x/usr" ; then
+ 	emphasis=15
+ 	AC_MSG_NOTICE([Pausing $emphasis seconds...])
+ 	sleep $emphasis
+-	while true ; do
+-	    AC_MSG_NOTICE([])
+-	    AC_MSG_NOTICE([Would you like to continue with /usr as the install prefix? [[yes/no]]])
+-	    read bc_answer
+-	    case "x$bc_answer" in
+-		x*[[yY]][[eE]][[sS]]*)
+-		    bc_answer=yes
+-		    break ;;
+-		x*[[nN]][[oO]]*)
+-		    bc_answer=no
+-		    break ;;
+-		x*)
+-		    AC_MSG_NOTICE([Please answer 'yes' or 'no'])
+-		    ;;
+-	    esac
+-	done
+-	if test "x$bc_answer" = "xno" ; then
+-	    AC_MSG_ERROR([*** Aborting due to --prefix=/usr ***])
+-	fi
+     fi
+ fi
+ 

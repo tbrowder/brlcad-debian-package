@@ -1,0 +1,41 @@
+Author: Giuseppe Iuculano <giuseppe@iuculano.it>
+Description: Fix some wrong-path-for-interpreter lintian error
+--- a/src/tclscripts/ami.tcl
++++ b/src/tclscripts/ami.tcl
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/tclsh
+ #                         A M I . T C L
+ # BRL-CAD
+ #
+--- a/src/tclscripts/ampi.tcl
++++ b/src/tclscripts/ampi.tcl
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/tclsh
+ #                        A M P I . T C L
+ # BRL-CAD
+ #
+--- a/src/tclscripts/geometree/GeometryBrowser.tcl
++++ b/src/tclscripts/geometree/GeometryBrowser.tcl
+@@ -1,4 +1,4 @@
+-#!/bin/tclsh
++#!/usr/bin/tclsh
+ #             G E O M E T R Y B R O W S E R . T C L
+ # BRL-CAD
+ #
+--- a/src/tclscripts/libdm.tcl
++++ b/src/tclscripts/libdm.tcl
+@@ -1,3 +1,4 @@
++#!/usr/bin/tclsh
+ #                       L I B D M . T C L
+ # BRL-CAD
+ #
+--- a/src/tclscripts/mged/points.tcl
++++ b/src/tclscripts/mged/points.tcl
+@@ -1,4 +1,4 @@
+-#!/usr/brlcad/bin/btclsh
++#!/usr/bin/tclsh
+ #                      P O I N T S . T C L
+ # BRL-CAD
+ #

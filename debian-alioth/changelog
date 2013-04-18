@@ -1,0 +1,5 @@
+brlcad (7.14.0+dfsg-1) unstable; urgency=low
+
+  * Initial release (Closes: #289632)
+
+ -- Giuseppe Iuculano <giuseppe@iuculano.it>  Thu, 08 Jan 2009 16:04:14 +0100

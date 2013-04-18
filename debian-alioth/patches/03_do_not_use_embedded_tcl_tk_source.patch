@@ -1,0 +1,85 @@
+Author: Giuseppe Iuculano <giuseppe@iuculano.it>
+Description: Do not include src/other/{tk,tcl}.
+--- a/src/bwish/Makefile.am
++++ b/src/bwish/Makefile.am
+@@ -15,10 +15,7 @@ bwish_CFLAGS = \
+ 	${ITK_CPPFLAGS} \
+ 	${TCL_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix
++	-I/usr/include/tcl8.4/tcl-private/generic
+ 
+ bwish_SOURCES = \
+ 	cmd.c \
+--- a/src/bwish/Makefile.in
++++ b/src/bwish/Makefile.in
+@@ -371,10 +371,7 @@ bwish_CFLAGS = \
+ 	${ITK_CPPFLAGS} \
+ 	${TCL_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix
++	-I/usr/include/tcl8.4/tcl-private/generic
+ 
+ bwish_SOURCES = \
+ 	cmd.c \
+--- a/src/libtclcad/Makefile.am
++++ b/src/libtclcad/Makefile.am
+@@ -45,10 +45,6 @@ libtclcad_la_CFLAGS = \
+ 	${ITCL_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+ 	${TCL_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix \
+ 	-I$(top_srcdir)/src/other/blt/src
+ libtclcad_la_LDFLAGS = -version-info 19:1 -no-undefined
+ libtclcad_la_LIBADD = ${TCLCAD_LIBS}
+--- a/src/libtclcad/Makefile.in
++++ b/src/libtclcad/Makefile.in
+@@ -386,10 +386,7 @@ libtclcad_la_CFLAGS = \
+ 	${ITCL_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+ 	${TCL_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix \
++	-I/usr/include/tcl8.4/tcl-private/generic \
+ 	-I$(top_srcdir)/src/other/blt/src
+ 
+ libtclcad_la_LDFLAGS = -version-info 19:1 -no-undefined
+--- a/src/mged/Makefile.am
++++ b/src/mged/Makefile.am
+@@ -133,10 +133,7 @@ mged_CFLAGS = \
+ 	${ITCL_CPPFLAGS} \
+ 	${ITK_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix
++	-I/usr/include/tcl8.4/tcl-private/generic
+ 
+ mged_LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) -o $@
+ mged_LDADD = \
+--- a/src/mged/Makefile.in
++++ b/src/mged/Makefile.in
+@@ -581,10 +581,7 @@ mged_CFLAGS = \
+ 	${ITCL_CPPFLAGS} \
+ 	${ITK_CPPFLAGS} \
+ 	${TK_CPPFLAGS} \
+-	-I$(top_srcdir)/src/other/tcl/generic \
+-	-I$(top_srcdir)/src/other/tcl/unix \
+-	-I$(top_srcdir)/src/other/tk/generic \
+-	-I$(top_srcdir)/src/other/tk/unix
++	-I/usr/include/tcl8.4/tcl-private/generic
+ 
+ mged_LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) -o $@
+ mged_LDADD = \

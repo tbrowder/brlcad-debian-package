@@ -1,0 +1,347 @@
+This package was debianized by Giuseppe Iuculano <giuseppe@iuculano.it> on
+Sat, 02 Aug 2008 22:57:59 +0200.
+
+It was downloaded from http://brlcad.org/d/download
+
+Upstream Authors:
+    Original architect and author: Mike Muuss
+
+    Morrison, Christopher Sean  <morrison@brlcad.org>
+
+    U.S. Army Research Laboratory Point of Contact
+    Davisson, Edwin O.  <davisson@arl.army.mil>
+
+Copyright:
+
+    Copyright © 2007-2008 United States Government as represented by
+    the U.S. Army Research Laboratory.
+
+License:
+
+    This package is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This package is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this package; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU Lesser General
+Public License can be found in `/usr/share/common-licenses/LGPL'.
+
+The Debian packaging is © 2009, Giuseppe Iuculano <giuseppe@iuculano.it> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+
+
+The BRL-CAD libraries provide their headers in the
+include/ directory as well as all of the directories that begin with
+the prefix "lib" in the src/ directory (e.g. src/librt/).  All of
+BRL-CAD's libraries, applications, and any content lacking a license
+specification are covered by the terms of the LGPL.
+
+Most of BRL-CAD's build infrastructure including files required by the
+GNU Build System (such as the configure.ac and all Makefile.am files),
+a variety of scripts located in the misc/ and sh/ directories, and the
+testing infrastructure (scripts and resources) are provided either
+under the BSD license or are in the public domain.  Similarly, most of
+the geometric models, images, and other data resources are also
+provided under the BSD license.
+
+bench/*, sh/*, autogen.sh, regress/repository.sh, src/rttherm/test.sh,
+src/libsysv/*, src/conv/*, src/other/libtermlib/*,
+src/other/tcl/generic/tclRegexp.c, src/other/tcl/generic/regerror.c,
+src/other/tcl/generic/regcomp.c, src/other/tcl/generic/regc_lex.c
+src/other/tcl/generic/regcustom.h, src/other/tcl/generic/regc_cvec.c
+src/other/tcl/generic/regex.h, src/other/tcl/generic/regexec.c,
+src/other/tcl/generic/regguts.h src/other/tcl/generic/regfree.c,
+src/other/tcl/generic/regc_nfa.c, src/other/tcl/generic/regfronts.c,
+src/other/tcl/generic/rege_dfa.c, src/other/tcl/generic/regc_color.c
+src/other/tcl/unix/tclUnixFCmd.c, src/other/libregex/*,
+src/libtclcad/tkImgFmtPIX.c are licensed under the BSD
+License:
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted under the terms of the BSD License.
+
+    THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+    ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+    OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+    HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+    LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+    OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+    SUCH DAMAGE.
+
+On Debian systems, the complete text of the BSD License can be
+found in `/usr/share/common-licenses/BSD'.
+
+
+src/liboptical/sh_wood.c:
+	Copyright (c) 1994 Gull Island Consultants, Inc.
+	All rights reserved.
+	Permission is granted to freely distribute this software as part of
+	the BRL-CAD package.
+
+src/liboptical/turb.c:
+	Copyright (c) 1994 Gull Island Consultants, Inc.
+	All rights reserved.
+	This software may be freely distributed without prior notice.
+
+src/other/tnt/*:
+	Template Numerical Toolkit (TNT)
+	
+	Mathematical and Computational Sciences Division
+	National Institute of Technology,
+	Gaithersburg, MD USA
+	
+	This software was developed at the National Institute of Standards and
+	Technology (NIST) by employees of the Federal Government in the course
+	of their official duties. Pursuant to title 17 Section 105 of the
+	United States Code, this software is not subject to copyright protection
+	and is in the public domain. NIST assumes no responsibility whatsoever for
+	its use by other parties, and makes no guarantees, expressed or implied,
+	about its quality, reliability, or any other characteristic.
+
+src/libbu/uce-dirent.h:
+	Copyright (C) 1998-2002  Toni Ronkko
+	
+	Permission is hereby granted, free of charge, to any person obtaining
+	a copy of this software and associated documentation files (the
+	``Software''), to deal in the Software without restriction, including
+	without limitation the rights to use, copy, modify, merge, publish,
+	distribute, sublicense, and/or sell copies of the Software, and to
+	permit persons to whom the Software is furnished to do so, subject to
+	the following conditions:
+	
+	The above copyright notice and this permission notice shall be included
+	in all copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+	IN NO EVENT SHALL TONI RONKKO BE LIABLE FOR ANY CLAIM, DAMAGES OR
+	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+	OTHER DEALINGS IN THE SOFTWARE.
+
+src/util/pcd-pix.c:
+	Authors -
+	    Hadmut Danisch (original program pcdtoppm)
+	    Michael John Muuss (this adaptation)
+	
+	Distribution Status -
+	    Original work Copyright (c) 1992 by Hadmut Danisch.
+	    The modifications by Mike Muuss are Public Domain, Distribution Unlimited.
+	
+	Copyright (c) 1992 by Hadmut Danisch (danisch@ira.uka.de).
+	Permission to use and distribute this software and its
+	documentation for noncommercial use and without fee is hereby granted,
+	provided that the above copyright notice appear in all copies and that
+	both that copyright notice and this permission notice appear in
+	supporting documentation. It is not allowed to sell this software in
+	any way. This software is not public domain.
+
+src/tab/scriptsort.c:
+	Author -
+	     Christopher T. Johnson
+	     Geometric Solutions, Inc.
+	     100 Custis St., Suite 2
+	     Aberdeen, MD, 21001
+
+	Copyright Notice -
+	     This software is Copyright (C) 1994 Geometric Solutions, Inc.
+	     Contributed to the US Army for unlimited distribution.
+
+src/libfb/if_X24.c:
+	Copyright (c) 1994 Sun Microsystems, Inc. - All Rights Reserved.
+
+	Permission is hereby granted, without written agreement and without
+	license or royalty fees, to use, copy, modify, and distribute this
+	software and its documentation for any purpose, provided that the
+	above copyright notice and the following two paragraphs appear in
+	all copies of this software.
+
+	IN NO EVENT SHALL SUN MICROSYSTEMS INC. BE LIABLE TO ANY PARTY FOR
+	DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING
+	OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF SUN
+	MICROSYSTEMS INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+	SUN MICROSYSTEMS INC. SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+	INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS FOR A PARTICULAR PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER
+	IS ON AN "AS IS" BASIS, AND SUN MICROSYSTEMS INC. HAS NO OBLIGATION TO
+	PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+src/other/URToolkit/*:
+	This software is copyrighted as noted below.  It may be freely copied,
+	modified, and redistributed, provided that the copyright notice is
+	preserved on all copies.
+
+	There is no warranty or other guarantee of fitness for this software,
+	it is provided solely "as is".  Bug reports or fixes may be sent
+	to the author, who may or may not act on them as he desires.
+
+	You may not include this software in a program or other software product
+	without supplying the source, or without informing the end-user that the
+	source is available for no extra charge.
+
+	If you modify this software, you should include a notice giving the
+	name of the person performing the modification, the date of modification,
+	and the reason for such modification.
+
+src/other/openNURBS/*:
+	Copyright (c) 1993-2001 Robert McNeel & Associates. All rights reserved.
+	Rhinoceros is a registered trademark of Robert McNeel & Assoicates.
+	
+	THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT EXPRESS OR IMPLIED WARRANTY.
+	ALL IMPLIED WARRANTIES OF FITNESS FOR ANY PARTICULAR PURPOSE AND OF
+	MERCHANTABILITY ARE HEREBY DISCLAIMED.
+
+	For complete openNURBS copyright information see <http://www.opennurbs.org>.
+
+src/other/libz/*:
+	Copyright (C) 1995-2005 Jean-loup Gailly and Mark Adler
+
+	This software is provided 'as-is', without any express or implied
+	warranty.  In no event will the authors be held liable for any damages
+	arising from the use of this software.
+
+	Permission is granted to anyone to use this software for any purpose,
+	including commercial applications, and to alter it and redistribute it
+	freely, subject to the following restrictions:
+
+	1. The origin of this software must not be misrepresented; you must not
+	   claim that you wrote the original software. If you use this software
+	   in a product, an acknowledgment in the product documentation would be
+	   appreciated but is not required.
+	2. Altered source versions must be plainly marked as such, and must not be
+	   misrepresented as being the original software.
+	3. This notice may not be removed or altered from any source distribution.
+
+	Jean-loup Gailly        Mark Adler
+	jloup@gzip.org          madler@alumni.caltech.edu
+
+src/other/tk/*, src/other/incrTcl/*, src/other/tcl/*,src/other/tkimg/*:
+	This software is copyrighted by the Regents of the University of
+	California, Sun Microsystems, Inc., and other parties.  The following
+	terms apply to all files associated with the software unless explicitly
+	disclaimed in individual files.
+
+	The authors hereby grant permission to use, copy, modify, distribute,
+	and license this software and its documentation for any purpose, provided
+	that existing copyright notices are retained in all copies and that this
+	notice is included verbatim in any distributions. No written agreement,
+	license, or royalty fee is required for any of the authorized uses.
+	Modifications to this software may be copyrighted by their authors
+	and need not follow the licensing terms described here, provided that
+	the new terms are clearly indicated on the first page of each file where
+	they apply.
+
+	IN NO EVENT SHALL THE AUTHORS OR DISTRIBUTORS BE LIABLE TO ANY PARTY
+	FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+	ARISING OUT OF THE USE OF THIS SOFTWARE, ITS DOCUMENTATION, OR ANY
+	DERIVATIVES THEREOF, EVEN IF THE AUTHORS HAVE BEEN ADVISED OF THE
+	POSSIBILITY OF SUCH DAMAGE.
+
+	THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTIES,
+	INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.  THIS SOFTWARE
+	IS PROVIDED ON AN "AS IS" BASIS, AND THE AUTHORS AND DISTRIBUTORS HAVE
+	NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR
+	MODIFICATIONS.
+
+	GOVERNMENT USE: If you are acquiring this software on behalf of the
+	U.S. government, the Government shall have only "Restricted Rights"
+	in the software and related documentation as defined in the Federal 
+	Acquisition Regulations (FARs) in Clause 52.227.19 (c) (2).  If you
+	are acquiring the software on behalf of the Department of Defense, the
+	software shall be classified as "Commercial Computer Software" and the
+	Government shall have only "Restricted Rights" as defined in Clause
+	252.227-7013 (c) (1) of DFARs.  Notwithstanding the foregoing, the
+	authors grant the U.S. Government and others acting in its behalf
+	permission to use and distribute the software in accordance with the
+	terms specified in this license.
+
+src/other/libutahrle/*:
+	This software is copyrighted as noted below.  It may be freely copied,
+	modified, and redistributed, provided that the copyright notice is
+	preserved on all copies.
+
+	There is no warranty or other guarantee of fitness for this software,
+	it is provided solely "as is".  Bug reports or fixes may be sent
+	to the author, who may or may not act on them as he desires.
+
+	You may not include this software in a program or other software product
+	without supplying the source, or without informing the end-user that the
+	source is available for no extra charge.
+
+	If you modify this software, you should include a notice giving the
+	name of the person performing the modification, the date of modification,
+	and the reason for such modification.
+
+src/other/blt/*:
+	Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts,
+	and the Massachusetts Institute of Technology, Cambridge, Massachusetts.
+
+        	                All Rights Reserved
+
+	Permission to use, copy, modify, and distribute this software and its
+	documentation for any purpose and without fee is hereby granted,
+	provided that the above copyright notice appear in all copies and that
+	both that copyright notice and this permission notice appear in
+	supporting documentation, and that the names of Digital or MIT not be
+	used in advertising or publicity pertaining to distribution of the
+	software without specific, written prior permission.
+
+	DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+	ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+	DIGITAL BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR
+	ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+	WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+	ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+	SOFTWARE.
+
+src/other/boost/*:
+	Copyright 1997, 1998, 1999, 2000 University of Notre Dame.
+	Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek
+
+	Distributed under the Boost Software License, Version 1.0. (See
+	accompanying file LICENSE_1_0.txt or copy at
+	http://www.boost.org/LICENSE_1_0.txt)
+
+	Boost Software License - Version 1.0 - August 17th, 2003
+
+	Permission is hereby granted, free of charge, to any person or organization
+	obtaining a copy of the software and accompanying documentation covered by
+	this license (the "Software") to use, reproduce, display, distribute,
+	execute, and transmit the Software, and to prepare derivative works of the
+	Software, and to permit third-parties to whom the Software is furnished to
+	do so, all subject to the following:
+	
+	The copyright notices in the Software and this entire statement, including
+	the above license grant, this restriction and the following disclaimer,
+	must be included in all copies of the Software, in whole or in part, and
+	all derivative works of the Software, unless such copies or derivative
+	works are solely in the form of machine-executable object code generated by
+	a source language processor.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+	SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+	FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+	DEALINGS IN THE SOFTWARE.
+
+
+
+misc/macosx/ was removed due to APSL DFSG incompatibility

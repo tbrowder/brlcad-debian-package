@@ -1,0 +1,37 @@
+Author: Giuseppe Iuculano <giuseppe@iuculano.it>
+Description: Fix some path.
+--- a/configure
++++ b/configure
+@@ -714,7 +714,7 @@ ac_hostname=`(hostname || uname -n) 2>/d
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=/usr
+ ac_clean_files=
+ ac_config_libobj_dir=.
+ LIBOBJS=
+--- a/configure.ac
++++ b/configure.ac
+@@ -595,7 +595,7 @@ BC_ARG_WITH_ALIAS([with_wgl], [windowsgl
+ ###
+ 
+ dnl automatically scan /usr/local (e.g. BSD uses /usr/local for ports)
+-BC_SEARCH_DIRECTORY([/usr/local])
++BC_SEARCH_DIRECTORY([/usr])
+ 
+ 
+ ###
+--- a/src/librt/opennurbs_ext.cpp
++++ b/src/librt/opennurbs_ext.cpp
+@@ -33,8 +33,8 @@
+ #include <vector>
+ #include <limits>
+ 
+-#include "tnt.h"
+-#include "jama_lu.h"
++#include "tnt/tnt.h"
++#include "jama/jama_lu.h"
+ 
+ #include "vmath.h"
+ #include "bu.h"

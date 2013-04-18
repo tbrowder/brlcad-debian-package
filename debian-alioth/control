@@ -1,0 +1,100 @@
+Source: brlcad
+Section: graphics
+Priority: extra
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Giuseppe Iuculano <giuseppe@iuculano.it>
+Build-Depends: quilt (>= 0.40), debhelper (>= 7), autotools-dev, blt-dev, libtk-img-dev, libpng12-dev, zlib1g-dev, itcl3-dev, libtnt-dev, iwidgets4, tcl8.4-dev, tk8.4-dev, pkg-config, libjama-dev, libncurses5-dev, libgl1-mesa-dev, openjdk-6-jdk, libxi-dev, itk3-dev, libdm0-dev, mffm-fftw-dev, bison, flex
+Standards-Version: 3.8.0
+Vcs-git: git://git.debian.org/debian-science/packages/brlcad.git
+Vcs-Browser: http://git.debian.org/?p=debian-science/packages/brlcad.git
+Homepage: http://brlcad.org
+
+Package: brlcad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, brlcad-data (= ${source:Version})
+Suggests: python
+Description: powerful combinatorial Constructive Solid Geometry (CSG)
+ BRL-CAD is a powerful combinatorial Constructive Solid Geometry solid modeling
+ system that includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis, network-distributed
+ framebuffer support, image and signal-processing tools, path-tracing and photon
+ mapping support for realistic image synthesis, a system performance analysis
+ benchmark suite, an embedded scripting interface, and libraries for robust
+ high-performance geometric representation and analysis.
+ .
+ BRL-CAD supports a great variety of geometric representations including an
+ extensive set of traditional CSG primitive implicit solids such as boxes,
+ ellipsoids, cones, and tori, as well as explicit solids made from closed
+ collections of Uniform B-Spline Surfaces, Non-Uniform Rational B-Spline
+ (NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted mesh geometry.
+ All geometric objects may be combined using boolean set-theoretic CSG
+ operations including union, intersection, and difference.
+
+Package: brlcad-data
+Architecture: all
+Depends: ${misc:Depends}, brlcad (>= ${source:Version}), tcl8.4
+Description: brlcad data files
+ BRL-CAD is a powerful combinatorial Constructive Solid Geometry solid modeling
+ system that includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis, network-distributed
+ framebuffer support, image and signal-processing tools, path-tracing and photon
+ mapping support for realistic image synthesis, a system performance analysis
+ benchmark suite, an embedded scripting interface, and libraries for robust
+ high-performance geometric representation and analysis.
+ .
+ BRL-CAD supports a great variety of geometric representations including an
+ extensive set of traditional CSG primitive implicit solids such as boxes,
+ ellipsoids, cones, and tori, as well as explicit solids made from closed
+ collections of Uniform B-Spline Surfaces, Non-Uniform Rational B-Spline
+ (NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted mesh geometry.
+ All geometric objects may be combined using boolean set-theoretic CSG
+ operations including union, intersection, and difference.
+ .
+ This package install brlcad data files
+
+Package: libbrlcad-dev
+Section: libdevel
+Architecture: any
+Depends: libbrlcad (= ${binary:Version})
+Description: powerful combinatorial Constructive Solid Geometry (CSG) library headers
+ BRL-CAD is a powerful combinatorial Constructive Solid Geometry solid modeling
+ system that includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis, network-distributed
+ framebuffer support, image and signal-processing tools, path-tracing and photon
+ mapping support for realistic image synthesis, a system performance analysis
+ benchmark suite, an embedded scripting interface, and libraries for robust
+ high-performance geometric representation and analysis.
+ .
+ BRL-CAD supports a great variety of geometric representations including an
+ extensive set of traditional CSG primitive implicit solids such as boxes,
+ ellipsoids, cones, and tori, as well as explicit solids made from closed
+ collections of Uniform B-Spline Surfaces, Non-Uniform Rational B-Spline
+ (NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted mesh geometry.
+ All geometric objects may be combined using boolean set-theoretic CSG
+ operations including union, intersection, and difference.
+ .
+ This package contains the library headers for developing programs using
+ libbrlcad
+
+Package: libbrlcad
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: powerful combinatorial Constructive Solid Geometry (CSG) library
+ BRL-CAD is a powerful combinatorial Constructive Solid Geometry solid modeling
+ system that includes interactive 3D solid geometry editing, high-performance
+ ray-tracing support for rendering and geometric analysis, network-distributed
+ framebuffer support, image and signal-processing tools, path-tracing and photon
+ mapping support for realistic image synthesis, a system performance analysis
+ benchmark suite, an embedded scripting interface, and libraries for robust
+ high-performance geometric representation and analysis.
+ .
+ BRL-CAD supports a great variety of geometric representations including an
+ extensive set of traditional CSG primitive implicit solids such as boxes,
+ ellipsoids, cones, and tori, as well as explicit solids made from closed
+ collections of Uniform B-Spline Surfaces, Non-Uniform Rational B-Spline
+ (NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted mesh geometry.
+ All geometric objects may be combined using boolean set-theoretic CSG
+ operations including union, intersection, and difference.
+ .
+ This package contains the shared library.

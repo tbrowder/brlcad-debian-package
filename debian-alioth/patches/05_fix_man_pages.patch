@@ -1,0 +1,103 @@
+Author: Giuseppe Iuculano <giuseppe@iuculano.it>
+Description: Fix some man pages.
+--- a/bench/benchmark.1
++++ b/bench/benchmark.1
+@@ -164,7 +164,7 @@ computation tests or filesystem clean-up
+ .PP
+ When the benchmark completes, output should be saved to several log
+ files including a 'summary' file containing tabulated results, a
+-'\*benchmark.log' file containing the output from a given run, and
++\'\*benchmark.log' file containing the output from a given run, and
+ multiple log files for each test frame. Use the \fIclean\fR and
+ \fIclobber\fR commands during execution to remove the files generated
+ during the benchmark.
+--- a/src/anim/anim_lookat.1
++++ b/src/anim/anim_lookat.1
+@@ -44,13 +44,13 @@ a specified point.
+ .SH SYNOPSIS
+ .B anim_lookat
+ .B [\-f #]
+-.B \[-v]
++.B [\-v]
+ .B < in.table
+ .B > out.script
+ .PP
+ .B anim_lookat
+ .B \-[y|q]
+-.B \[-v]
++.B [\-v]
+ .B < in.table
+ .B > out.table
+ 
+--- a/src/other/URToolkit/man/rleinterp.1
++++ b/src/other/URToolkit/man/rleinterp.1
+@@ -49,7 +49,7 @@ Specify The number of images to create. 
+ .LP
+ .SH EXAMPLES
+ .TP
+-'Fondu au noir' of image1 on 5 images named fondu_XXX.rle.
++\'Fondu au noir' of image1 on 5 images named fondu_XXX.rle.
+ rleinterp \-1 image1 \-o fondu.rle \-n 5
+ .TP
+ Interpolate 1 image between image1 and image2.
+--- a/src/vdeck/vdeck.1
++++ b/src/vdeck/vdeck.1
+@@ -1,4 +1,4 @@
+-.TH VDECK 1V VMB
++.TH VDECK 1 VMB
+ .\"                        V D E C K . 1
+ .\" BRL-CAD
+ .\"
+--- a/src/anim/anim_cascade.1
++++ b/src/anim/anim_cascade.1
+@@ -185,7 +185,7 @@ will produce an absolute animation table
+ the camera, suitable to use as input to
+ .IR anim_script :
+ .sp
+-anim_cascade < input.table | anim_script -v500 > view.script
++anim_cascade < input.table | anim_script \-v500 > view.script
+ .sp
+ 2. Suppose that you have an animation path for an object and you want to
+ know when it crosses a given oblique plane. You can use the
+@@ -202,7 +202,7 @@ degrees, the x-axis is perpendicular to 
+ To convert the absolute animation path into this frame of reference, the command
+ would be:
+ .sp
+-anim_cascade -or -fc 0 0 0 -fy 0 45 0 < absolute.table > relative.table
++anim_cascade \-or \-fc 0 0 0 \-fy 0 45 0 < absolute.table > relative.table
+ .sp
+ Wherever the x coordinate in the output table is positive, the object
+ lies above the plane.
+@@ -213,7 +213,7 @@ position a camera so that to the camera,
+ units straight ahead, facing to the right. You could find the required
+ position and orientation of the camera with the following command:
+ .sp
+-anim_cascade -s -of -ac 1 2 3 -ay 45 25 10 -rc 10 0 0 -ry -90 0 0
++anim_cascade \-s \-of \-ac 1 2 3 \-ay 45 25 10 \-rc 10 0 0 \-ry \-90 0 0
+ .sp
+ 
+ .SH AUTHOR
+--- a/src/irprep/all_sf.1
++++ b/src/irprep/all_sf.1
+@@ -76,9 +76,9 @@ The following is an example from an inte
+ 	Database Title:  concentric spheres for use with
+ 	Number of regions:  3
+ 	Min & max for entire model.
+-		X:  -2300.000000 - 2300.000000
+-		Y:  -2300.000000 - 2300.000000
+-		Z:  -2300.000000 - 2300.000000
++		X:  \-2300.000000 \- 2300.000000
++		Y:  \-2300.000000 \- 2300.000000
++		Z:  \-2300.000000 \- 2300.000000
+ 	Center:  0.000000, 0.000000, 0.000000
+ 
+ 	Radius:  3984.216857
+--- a/src/other/tkhtml3/doc/html.man
++++ b/src/other/tkhtml3/doc/html.man
+@@ -1,5 +1,5 @@
+ 
+-[TH tkhtml n]
++[TH tkhtml 7]
+ 
+ [Section Name]
+ 	tkhtml - Widget to render html documents.
