@@ -11,21 +11,18 @@ touched by the packaging process.  Any necessary source code changes
 are kept with the Debian 'quilt' utility whose database will also be
 kept under version control.  Such changes will also be fed upstream.
 
-The package is built out-of-tree in the 'build' directory, and the
-Makefiles and a package building script (make-brlcad-deb-packages.sh)
-are used to drive the process from this top-level directory.  All
+The package is built out-of-tree in the 'build-tmp' directory, and the
+Makefiles are used to drive the process from this top-level directory.  All
 files BUT the 'debian' directory can be deleted without harm since
-they are part of the 'cmake' configuration process.  Note that
-'make-brlcad-deb-packages.sh' is a modified copy of the upstream
-'sh/make_deb.sh' script.
+they are part of the 'cmake' configuration process.
 
-The 'build/debian' directory is kept under version control and
-generally stays synchronized with its sister directory in the upstream
-BRL-CAD HEAD.  Necessary changes to satisfy the latest Debian policy
-and Debian Maintainers are fed back upstream.
+The 'debian' directory is kept under version control and generally
+stays synchronized with its sister directory in the upstream BRL-CAD
+HEAD.  Necessary changes to satisfy the latest Debian policy and
+Debian Maintainers are fed back upstream.
 
-Building release packages
-=========================
+Building packages
+=================
 
 * Select and copy an original upstream tar ball of the desired release
   into this directory.
@@ -36,27 +33,13 @@ Building release packages
 
 Execute 'make' in this directory to see further instructions.
 
-Building test packages
-======================
-
-Testing will track the current BRL-CAD HEAD during testing, so soft
-link the local HEAD directory to this directory as './brlcad-N.NN.N'
-where 'N.NN.N' is named after the current unstable or HEAD pseudo
-release tag.
-
-* Edit 'Makefile' to define the correct pseudo version number.
-
-* Edit 'Makefile' to define the VCS source directory as the HEAD variable.
-
-Execute 'make' in this directory to see further instructions.
-
 Packages
 ========
 
 The following binary packages are planned:
 
-* libbrlcad
-* libbrlcad-dev
-* libbrlcad-utils
-* libbrlcad-doc
-* libbrlcad-dbg
+* brlcad
+* brlcad-dev
+* brlcad-utils
+* brlcad-doc
+* brlcad-dbg

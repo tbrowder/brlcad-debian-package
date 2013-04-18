@@ -4,23 +4,17 @@
 #BVERSION = 7.22.0
 BVERSION = 7.23.1
 
-# set HEAD to the the upstream source VCS source dir; comment it out
-# if not needed
-#HEAD=/usr/local/src2/brlcad-svn/brlcad/trunk
-
-# define the packager (debian format)
-PACKAGER=Tom Browder <tom.browder@gmail.com>
-
 SHELL   = /bin/bash
 SRCDIR  = brlcad-$(BVERSION)
 ODIR    = brlcad_$(BVERSION)
-BLDDIR  = build
+
+# all files in the build dir are auto-generated
+BLDDIR  = build-tmp
 SFIL    = brlcad-info.sh
 
 TOPDIR := $(shell pwd)
 
 DEBDIR := ./debian
-
 DEB_SCRIPT  = make-brlcad-deb-packages.sh
 
 BLD_ARGS  = rel
@@ -33,29 +27,28 @@ include Makefile.brlcad-options
 # define dirs in the build directory that may be cleaned
 include Makefile.build-files
 
-all: $(SFIL)
-ifneq ($(strip $(HEAD)),)
-	@echo "Testing with updated HEAD"
-endif
+all:
 	@echo "Set for BRL-CAD version '$(BVERSION)'."
 	@echo " "
-	@echo "Enter 'make clean' to remove build files in"
+	@echo "Enter 'make clean' to remove all files in"
 	@echo "  '$(BLDDIR)'."
-	@echo " "
-	@echo "Enter 'make conf' to remove build files in"
-	@echo "  '$(BLDDIR)' and reconfigure the directory."
-	@echo " "
-	@echo "Enter 'make check' to check for pre-requisites."
 	@echo " "
 	@echo "Enter 'make deb' to build the binary deb packages."
 	@echo "Enter 'make src' to build the source deb package."
+	@echo "Enter 'make build' to build BRL-CAD."
 
-$(SFIL):
-        # write info file to used by the make deb script
-	@echo BVERSION=$(BVERSION)       >  $(SFIL)
-	@echo SRCDIR=$(SRCDIR)           >> $(SFIL)
-	@echo "PACKAGER='$(PACKAGER)'"   >> $(SFIL)
-	@echo DEB_SCRIPT=$(DEB_SCRIPT)   >> $(SFIL)
+# this is looking usable; need to use vars for some things; add cmake
+# options into rules file
+conf:
+	@echo "Configuring directory '$(BLDDIR)'..."
+	( unset BRLCAD_ROOT ; cd $(SRCDIR) ; \
+           dh_auto_configure --verbose --builddirectory=$(TOPDIR)/$(BLDDIR) \
+           --buildsystem=cmake --parallel)
+
+build:
+	@echo "Building BRL-CAD in '$(TOPDIR)/$(BLDDIR)'..."
+	( cd -r $(TOPDIR)/$(SRCDIR) ; debian/rules build )
+	dpkg-source -b $(TOPDIR)/$(SRCDIR)
 
 deb: $(SFIL)
 	@echo "Building Debian binary packages..."
@@ -75,17 +68,3 @@ clean:
 	@echo "Removing all but the 'debian' dir in directory '$(BLDDIR)'..."
 	( cd $(BLDDIR); rm $(BUILD_FILES); rm -rf $(BUILD_DIRS) )
 	@echo "See 'debian' dir in directory '$(BLDDIR)'..."
-
-update:
-ifneq ($(strip $(HEAD)),)
-	@echo "Updating HEAD..."
-	@echo "Changing to dir '$(HEAD)'..."
-	( cd $(HEAD) ; svn update )
-	echo "Done..."
-else
-	@echo "Not using HEAD, update not needed..."
-endif
-
-conf: clean update
-	@echo "Reconfiguring directory '$(BLDDIR)'..."
-	( unset BRLCAD_ROOT ; cd $(BLDDIR) ; cmake $(TOPDIR)/$(SRCDIR) $(RELEASE_OPTIONS) )
