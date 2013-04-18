@@ -19,6 +19,8 @@ SFIL    = brlcad-info.sh
 
 TOPDIR := $(shell pwd)
 
+DEBDIR := ./debian
+
 DEB_SCRIPT  = make-brlcad-deb-packages.sh
 
 BLD_ARGS  = rel
@@ -61,11 +63,9 @@ deb: $(SFIL)
 
 src: $(SFIL)
 	@echo "Building Debian source package..."
-#	( cd $(BLDDIR); $(TOPDIR)/$(DEB_SCRIPT) -s | tee build.log )
-#	( cd $(BLDDIR); dpkg-buildpackage -us -uc -S | tee build.log )
 	( rm -rf $(TOPDIR)/$(SRCDIR)/debian )
-	( cp -r $(TOPDIR)/$(BLDDIR)/debian $(TOPDIR)/$(SRCDIR) )
-	( cd $(BLDDIR); dpkg-source -b $(TOPDIR)/$(SRCDIR)  )
+	( cp -r $(TOPDIR)/$(DEBDIR) $(TOPDIR)/$(SRCDIR) )
+	dpkg-source -b $(TOPDIR)/$(SRCDIR)
 
 check: $(SFIL)
 	@echo "Checking for pre-requisites..."
