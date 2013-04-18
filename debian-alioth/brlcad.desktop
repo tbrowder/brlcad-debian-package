@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=BRL-CAD
-Comment=Powerful combinatorial Constructive Solid Geometry (CSG)
-Exec=mged
-Terminal=true
-Type=Application
-Categories=Application;Graphics;
-StartupNotify=false

@@ -1,4 +1,0 @@
-# Lintian cannot reliably detect the removal in the clean
-# rule, so overriding these warning.
-brlcad source: configure-generated-file-in-source src/other/tk/unix/config.status
-brlcad source: configure-generated-file-in-source src/other/tcl/unix/config.status

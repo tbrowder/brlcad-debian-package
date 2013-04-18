@@ -1,2 +1,0 @@
-?package(brlcad):needs="X11" section="Applications/Graphics"\
-  title="BRL-CAD" command="/usr/bin/mged"

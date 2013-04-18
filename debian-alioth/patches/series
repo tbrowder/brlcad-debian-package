@@ -1,5 +1,0 @@
-01_do_not_prompt_for_usr_warning.patch
-02_fix_path.patch
-03_do_not_use_embedded_tcl_tk_source.patch
-05_fix_man_pages.patch
-06_fix_wrong_path_interpreter.patch

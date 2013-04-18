@@ -1,7 +1,0 @@
-usr/include/*
-usr/lib/brlcad/pkgconfig usr/lib/
-usr/lib/brlcad/lib*.so
-usr/lib/brlcad/*.la
-usr/lib/brlcad/*.a
-var/lib/brlcad/*-config
-usr/share/man/man1/brlcad-config.1
